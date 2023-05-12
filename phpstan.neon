@@ -1,0 +1,13 @@
+parameters:
+
+    paths:
+        - src/
+
+    level: 9
+
+    ignoreErrors:
+        - '#\$value of function strval expects bool\|float\|int\|resource\|string\|null, mixed given.#'
+
+    excludePaths:
+
+    checkMissingIterableValueType: false

@@ -1,0 +1,76 @@
+{
+  "name": "treblle/security-headers",
+  "description": "A collection of HTTP middleware classes to improve the security headers in your Laravel application.",
+  "homepage": "https://www.treblle.com/",
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "debuging",
+    "documentation",
+    "laravel",
+    "monitoring",
+    "treblle"
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "role": "Developer",
+      "name": "Steve McDougall",
+      "email": "juststevemcd@gmail.com",
+      "homepage": "https://www.juststeveking.uk/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Treblle\\SecurityHeaders\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Treblle\\SecurityHeaders\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.10",
+    "orchestra/testbench": "^8.5.2",
+    "pestphp/pest": "^2.6.1",
+    "phpstan/phpstan": "^1.10.15"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Treblle\\SecurityHeaders\\Providers\\PackageServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "pint": [
+      "./vendor/bin/pint"
+    ],
+    "stan": [
+      "./vendor/bin/phpstan analyse --memory-limit=3G"
+    ],
+    "test": [
+      "./vendor/bin/pest"
+    ]
+  },
+  "scripts-descriptions": {
+    "pint": "Run Laravel Pint code styling.",
+    "stan": "Run PHPStan against code base.",
+    "test": "Run test suite."
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "php-http/discovery": true
+    }
+  }
+}
