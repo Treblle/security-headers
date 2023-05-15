@@ -24,36 +24,25 @@ abstract class PackageTestCase extends TestCase
 
     protected function defineEnvironment($app): void
     {
-        tap($app->make('config'), function (Repository $config): void {
-            $config->set('headers.remove', [
-                'X-Powered-By',
-                'Server',
-            ]);
+        tap($app->make('config'), static function (Repository $config): void {
+            $config->set('headers', [
+                'remove' => [
+                    'X-Powered-By',
+                    'x-powered-by',
+                    'Server',
+                    'server',
+                ],
 
-            $config->set(
-                'headers.referrer-policy',
-                'no-referrer-when-downgrade',
-            );
-            $config->set(
-                'headers.xss-mode',
-                '1; mode=block',
-            );
-            $config->set(
-                'headers.strict-transport-security',
-                'max-age=31536000; includeSubDomains',
-            );
-            $config->set(
-                'headers.certificate-transparency',
-                'enforce, max-age=30',
-            );
-            $config->set(
-                'headers.permissions-policy',
-                'autoplay=(self), camera=(), encrypted-media=(self), fullscreen=(), geolocation=(self), gyroscope=(self), magnetometer=(), microphone=(), midi=(), payment=(), sync-xhr=(self), usb=()'
-            );
-            $config->set(
-                'headers.content-type-options',
-                'nosniff',
-            );
+                'referrer-policy' => 'no-referrer-when-downgrade',
+
+                'strict-transport-security' => 'max-age=31536000; includeSubDomains',
+
+                'certificate-transparency' => 'enforce, max-age=30',
+
+                'permissions-policy' => 'autoplay=(self), camera=(), encrypted-media=(self), fullscreen=(), geolocation=(self), gyroscope=(self), magnetometer=(), microphone=(), midi=(), payment=(), sync-xhr=(self), usb=()',
+
+                'content-type-options' => 'nosniff',
+            ]);
         });
     }
 }

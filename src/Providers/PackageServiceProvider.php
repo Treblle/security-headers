@@ -11,7 +11,7 @@ final class PackageServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../../config/headers.php' => config_path('headers.php'),
+            __DIR__.'/../../config/headers.php' => config_path('headers.php'),
         ], 'security-headers');
     }
 }

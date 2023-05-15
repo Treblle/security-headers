@@ -12,8 +12,6 @@ return [
 
     'referrer-policy' => 'no-referrer-when-downgrade',
 
-    'xss-mode' => '1; mode=block',
-
     'strict-transport-security' => 'max-age=31536000; includeSubDomains',
 
     'certificate-transparency' => 'enforce, max-age=30',
