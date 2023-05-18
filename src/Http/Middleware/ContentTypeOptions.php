@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Treblle\SecurityHeaders\Http\Middleware;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response;
 use Closure;
 
 final class ContentTypeOptions

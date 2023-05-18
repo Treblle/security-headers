@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Treblle\SecurityHeaders\Http\Middleware;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Closure;
+use Symfony\Component\HttpFoundation\Response;
 
 final class CertificateTransparencyPolicy
 {
