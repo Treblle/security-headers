@@ -21,6 +21,8 @@ final class RemoveHeaders
          * @var string $header
          */
         foreach ((array) config('headers.remove') as $header) {
+            header_remove($header);
+
             $response->headers->remove(
                 key: $header,
             );
